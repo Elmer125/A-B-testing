@@ -1,0 +1,55 @@
+<div class="py-8 sm:py-4">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl lg:text-center">
+      <h2 class="text-base font-semibold leading-7 text-indigo-600">Split for A/B testing</h2>
+      <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"><%= @ab_test.capitalize%> View</p>
+      <p class="mt-6 text-lg leading-8 text-gray-600">For basic A/B testing with the Split gem, you need to follow these steps:</p>
+    </div>
+    <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+      <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+        <div class="relative pl-16">
+          <dt class="text-base font-semibold leading-7 text-gray-900">
+            <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600 text-white">
+              1
+            </div>
+            Install Split gem.
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">Add the 'split' gem to your Gemfile, and then execute 'bundle install' in your console.</dd>
+        </div>
+        <div class="relative pl-16">
+          <dt class="text-base font-semibold leading-7 text-gray-900">
+            <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600 text-white">
+              2
+            </div>
+            Create a file to configure the gem.
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">Create a file in config/initializers to configure the Split gem.</dd>
+        </div>
+        <div class="relative pl-16">
+          <dt class="text-base font-semibold leading-7 text-gray-900">
+            <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600 text-white">
+              3
+            </div>
+            Create routes for the A/B test.
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">Set up a route to view statistics on those who enter your page.You can access the statistics by <%= link_to 'Click Here', split_dashboard_path, class: 'no-underline hover:underline text-blue-500' %> To access this view, you can set a username and password for added security. Please refer to the documentation for detailed instructions on configuring these credentials. </dd>
+        </div>
+        <div class="relative pl-16">
+          <dt class="text-base font-semibold leading-7 text-gray-900">
+            <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600 text-white">
+              4
+            </div>
+            Set up the A/B test.
+          </dt>
+          <dd class="mt-2 text-base leading-7 text-gray-600">Finally, use ab_test('form_title', 'Sign up now', 'Join Today') to initialize the A/B test. When you're ready to conclude the test, add ab_finished(:form_title)</dd>
+        </div>
+      </dl>
+    </div>
+    <div class="mx-auto max-w-2xl lg:text-center mt-10">
+      <%= link_to  "Change page", home_change_ab_test_path, class:"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+    </div>
+    <div class="mx-auto max-w-2xl lg:text-center mt-10">
+      <%= link_to  "Documentation", "https://github.com/splitrb/split", target:"_blank",  class: 'no-underline hover:underline text-blue-500'  %>
+    </div>
+  </div>
+</div>
